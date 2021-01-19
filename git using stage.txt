@@ -1,0 +1,52 @@
+1、git 官网下载git并安装
+2、github 官网注册账号
+3、GitHub 创建仓库 
+4、配置git的name  和  email      右键 进入gitbash 控制台
+输入命令：
+ git config --global user.name "名字"
+ git config --global user.email "邮箱"
+在源代码所在文件夹目录下右键，选择git bash here 
+配置完成！
+5、生成秘钥
+在需要上传代码的文件夹下右键点击git  bash here 
+输入命令： ssh-keygen -t rsa -C "邮箱地址"
+输入y
+生成密钥完成！
+6、复制密钥
+运行命令：clip < ~/.ssh/id_rsa.pub  此时密钥复制完成
+7、给GitHub 中的仓库配置密钥
+打开GitHub 进入仓库 点击 setting 点击 deploy keys
+点击 add deploy key 添加密钥
+在key 框框 中 添加密钥  Ctrl+v 粘贴刚才复制的密钥
+下面括号打勾！！！allow write access
+点击add    此时已经仓库密钥 已配置完成
+8、测试密钥
+右键打开git bush 运行命令：git@github.com
+测试完成
+9、开始上传本地仓库到远程仓库
+在需要上传代码的文件目录下 git bush here
+运行命令：
+// 仓库的初始化
+git init
+//添加自己的代码
+git add .
+或者
+git add --all
+//查看代码 有没有到本地仓库中
+git status
+显示绿色的说明此文件已经被本地仓库管理
+10、提交代码到远程仓库 
+继续执行命令：
+git commit -m "提交信息"（用来给自己提交时写说明）
+11、复制GitHub 中你的仓库的 ssh链接
+输入推送到此仓库的链接命令：
+git remote add origin 链接（一般是：git@gitHub...）
+//把本地仓库推送到远程仓库
+git push -u origin master
+推送完成！！
+
+
+进入 GitHub ，刷新界面，就可以在仓库中看到本地推送的代码了！！
+
+
+2021.01.19
